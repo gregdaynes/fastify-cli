@@ -95,7 +95,7 @@ async function runFastify (args, additionalOptions, serverOptions) {
   let logger
   if (opts.loggingModule) {
     try {
-      logger = requireModule(opts.loggingModule)
+      logger = requireModule(opts.loggingModule)(opts)
     } catch (e) {
       module.exports.stop(e)
     }
